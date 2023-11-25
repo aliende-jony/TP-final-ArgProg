@@ -1,14 +1,23 @@
+import { useState } from "react";
+import { TaskList } from "./TaskList";
+function Container() {
+  const [list, setList] = useState([]);
 
-import { Formtodo } from './FormTodo';
-import { TaskList } from './TaskList';
-function Container () {
+  function addItem() {
+    const item = document.getElementById("texto");
+    const newList = [...list, item.value];
+    setList(newList);
+    item.value = "";
+  }
+
   return (
     <div className="Container">
-       Soy el container!
-      <Formtodo/>
-      <TaskList/>
-    </div>
-  )
-};
+      <TaskList list={list} />
 
-export {Container};
+      <button onClick={() => addItem()}>ADD</button>
+      <input placeholder="Type something" id="texto" type="text" />
+    </div>
+  );
+}
+
+export { Container };

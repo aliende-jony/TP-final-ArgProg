@@ -1,11 +1,13 @@
 import { Checkbox } from "./Checkbox";
 
-const TaskList = () => {
-	return(
-    <div>TaskList!
-    <Checkbox/>
-    </div>
+const TaskList = ({ list }) => {
+  return list.map((item, key) => {
+    return (
+      <div key={key}>
+        <Checkbox item={item} />
+      </div>
     );
+  });
 };
 
-export {TaskList}
+export { TaskList };

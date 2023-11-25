@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Checkbox  () {
-	return (
-      <div>Checkbox!</div>
-    );
-};
+function Checkbox({ item }) {
+  const [isChecked, setIschecked] = useState(false);
 
-export{Checkbox};
+  function handleChcked() {
+    setIschecked(!isChecked);
+  }
+  
+
+  return (
+    <>
+      {isChecked ? (
+        <p style={{ textDecorationLine: "line-through" }}>{item}</p>
+      ) : (
+        <p>{item}</p>
+      )}
+      <input
+        checked={isChecked}
+        className="checkbox"
+        type="checkbox"
+        onChange={() => handleChcked()}
+      />
+    </>
+  );
+}
+
+export { Checkbox };
