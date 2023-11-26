@@ -1,21 +1,27 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { TaskList } from "./TaskList";
+
 function Container() {
   const [list, setList] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  function addItem() {
-    const item = document.getElementById("texto");
-    const newList = [...list, item.value];
+  const addItem = () => {
+    const newList = [...list, inputValue];
     setList(newList);
-    item.value = "";
-  }
+    setInputValue("");
+  };
 
   return (
     <div className="Container">
       <TaskList list={list} />
 
-      <button onClick={() => addItem()}>ADD</button>
-      <input placeholder="Type something" id="texto" type="text" />
+      <button onClick={addItem}>ADD</button>
+      <input
+        placeholder="Type something"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        type="text"
+      />
     </div>
   );
 }
