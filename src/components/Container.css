@@ -1,0 +1,41 @@
+.Container{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    width: 30vw;
+    background-color: white;
+}
+.input{
+    width: 80%;
+    height: 1.7rem;
+    padding-left: 1rem;
+    border: none;
+    border-radius: 15px;
+    background-color: #F5F5F5;
+    outline: none;
+}
+.input::placeholder{
+    font-weight: 600;
+    color: #D2D2D2;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.add{
+    border: none;
+    color: white;
+    background-color: #FF1F5B;
+    height: 1.6rem;
+    width: 1.6rem;
+    position: absolute;
+    right: 38vw;
+    transform: translateY(2px);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 600;
+}

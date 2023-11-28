@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { TaskList } from "./TaskList";
+import './Container.css'
 
-function Container() {
+function Container(props) {
+  const {children} = props
   const [list, setList] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -13,15 +15,18 @@ function Container() {
 
   return (
     <div className="Container">
+      {children}
       <TaskList list={list} />
-
-      <button onClick={addItem}>ADD</button>
+      <div className="btn">
       <input
-        placeholder="Type something"
+      className="input"
+        placeholder ="Type something"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         type="text"
       />
+      <button className="add" onClick={addItem}>+</button>
+      </div>
     </div>
   );
 }

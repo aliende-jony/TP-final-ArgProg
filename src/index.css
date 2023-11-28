@@ -11,8 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .App{
   display: flex;
   flex-direction: column;
   text-align: center;
+  border-radius: .5rem;
 }
