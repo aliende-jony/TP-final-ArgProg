@@ -11,7 +11,7 @@ function FechaActual() {
     const diaMes = fecha.toLocaleString('en-US', { day: 'numeric' });
     const nombreMes = fecha.toLocaleString('en-US', { month: 'short' });
     const año = fecha.toLocaleString('en-US', { year: 'numeric' });
-    const horaMinutos = fecha.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    const horaMinutos = fecha.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
 
     return { diaSemana, diaMes, nombreMes, año, horaMinutos };
   }

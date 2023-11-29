@@ -1,10 +1,10 @@
-import { Checkbox } from "./Checkbox";
+import { Checkbox } from "./Checkbox/Checkbox";
 
 const TaskList = ({ list }) => {
   return list.map((item, key) => {
     return (
       <div key={key}>
-        <Checkbox item={item} />
+        <Checkbox item={item}/>
       </div>
     );
   });

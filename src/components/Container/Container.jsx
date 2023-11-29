@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { TaskList } from "./TaskList";
+import { TaskList } from "../TaskList";
+import { Header } from '../Header/Header'
 import './Container.css'
 
 function Container(props) {
@@ -15,17 +16,22 @@ function Container(props) {
 
   return (
     <div className="Container">
+      <Header/>
       {children}
       <TaskList list={list} />
       <div className="btn">
-      <input
-      className="input"
-        placeholder ="Type something"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        type="text"
-      />
-      <button className="add" onClick={addItem}>+</button>
+        <input
+        className="input"
+          placeholder ="Type something"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          type="text"
+        />
+        {inputValue.trim() && (
+            <button className="add" onClick={addItem}>
+              +
+            </button>
+          )}
       </div>
     </div>
   );

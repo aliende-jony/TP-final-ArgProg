@@ -2,5 +2,18 @@
     background-color: #FF1F5B;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    width: 50%;
+    z-index: 2000;
+    margin-top: 20px;
+}
+
+@media (width <= 912px){
+    #header{
+        border-radius: 0%;
+        width: 100%;
+        margin: 0%;
+        position: relative;
+    }
 }
