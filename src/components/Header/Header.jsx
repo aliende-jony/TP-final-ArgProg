@@ -1,9 +1,10 @@
 import { FechaActual } from "./FechaActual/FechaActual";
 import './Header.css'
 
-function Header(){
+function Header({modoNocturno}){
+
     return(
-        <div id="header">
+        <div className={`header ${modoNocturno ? 'modo-nocturno' : ''}`}>
             <FechaActual/>
         </div>
     )

@@ -1,4 +1,4 @@
-#header{
+.header{
     background-color: #FF1F5B;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -9,8 +9,12 @@
     margin-top: 20px;
 }
 
+.header.modo-nocturno{
+    background-color: #921335;
+}
+
 @media (width <= 912px){
-    #header{
+    .header{
         border-radius: 0%;
         width: 100%;
         margin: 0%;

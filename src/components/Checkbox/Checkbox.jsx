@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import './Checkbox.css'
 
-function Checkbox({ item }) {
+function Checkbox({ item, eliminarTarea }) {
   const [isChecked, setIschecked] = useState(false);
 
   function handleChecked() {
     setIschecked(!isChecked);
   }
-  
+
+  function handleEliminarTarea() {
+    eliminarTarea();
+  }
 
   return (
     <div className="tarea-check">
@@ -18,9 +21,12 @@ function Checkbox({ item }) {
       )}
       <button
         className={`checkbox ${isChecked ? 'checked' : ''}`}
-        onClick={() => handleChecked()}
+        onClick={handleChecked}
       >
         {isChecked ? '✔' : '✔'}
+      </button>
+      <button className="eliminar" onClick={handleEliminarTarea}>
+      🗑️
       </button>
     </div>
   );
